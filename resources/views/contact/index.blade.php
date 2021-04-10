@@ -14,6 +14,7 @@
                         </div>
                     @endif
 
+                    <a href="{{ route('contact.create')}}">新規投稿</a>
                     indexです。
                 </div>
             </div>
