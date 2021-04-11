@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">Dashboard</div>
 
@@ -21,6 +21,8 @@
                             <tr>
                                 <th scope="col">id</th>
                                 <th scope="col">your_name</th>
+                                <th scope="col">created_at</th>
+                            </tr>
                             </tr>
                         </thead>
                         <tbody>
@@ -28,6 +30,7 @@
                                 <tr>
                                     <th scope="row">{{$contact->id}}</th>
                                     <td>{{$contact->your_name}}</td>
+                                    <td>{{$contact->created_at}}</td>
                                 </tr>
                             @endforeach
                         </tbody>
