@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    <a href="{{ route('contact.index')}}">フォームページ</a>
                     You are logged in!
                 </div>
             </div>

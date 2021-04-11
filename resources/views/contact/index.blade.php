@@ -15,7 +15,11 @@
                     @endif
 
                     <a href="{{ route('contact.create')}}">新規投稿</a>
-                    indexです。
+
+                    @foreach ($contacts as $contact)
+                        {{$contact->id}}
+                        {{$contact->your_name}}
+                    @endforeach
                 </div>
             </div>
         </div>
