@@ -31,6 +31,7 @@
                                     <th scope="row">{{$contact->id}}</th>
                                     <td>{{$contact->your_name}}</td>
                                     <td>{{$contact->created_at}}</td>
+                                    <td><a class="btn btn-primary" href="{{ route('contact.show',['id' => $contact->id])}}">詳細を見る</a></td>
                                 </tr>
                             @endforeach
                         </tbody>
