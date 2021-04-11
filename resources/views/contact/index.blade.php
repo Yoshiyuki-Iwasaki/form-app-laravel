@@ -14,12 +14,24 @@
                         </div>
                     @endif
 
-                    <a href="{{ route('contact.create')}}">新規投稿</a>
+                    <a class="btn btn-primary" href="{{ route('contact.create')}}">新規投稿</a>
 
-                    @foreach ($contacts as $contact)
-                        {{$contact->id}}
-                        {{$contact->your_name}}
-                    @endforeach
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">id</th>
+                                <th scope="col">your_name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($contacts as $contact)
+                                <tr>
+                                    <th scope="row">{{$contact->id}}</th>
+                                    <td>{{$contact->your_name}}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
