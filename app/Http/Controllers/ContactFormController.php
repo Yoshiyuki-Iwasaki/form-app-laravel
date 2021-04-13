@@ -19,9 +19,7 @@ class ContactFormController extends Controller
         // $contacts = ContactForm::all();
 
         // クエリビルダー
-        $contacts = DB::table('contact_forms')
-        ->select('id','your_name','created_at')
-        ->get();
+        $contacts = DB::table('contact_forms')->get();
 
         // dd($contacts);
         return view('contact.index', compact('contacts'));
@@ -75,7 +73,6 @@ class ContactFormController extends Controller
         if($contact->gender === 1) {
             $gender = '女性';
         }
-
         if($contact->age === 1) {
             $age = '〜19歳';
         }
@@ -121,7 +118,17 @@ class ContactFormController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $contact = ContactForm::find($id);
+        $contact->your_name = $request->input('your_name');
+        $contact->email = $request->input('email');
+        $contact->url = $request->input('url');
+        $contact->gender = $request->input('gender');
+        $contact->age = $request->input('age');
+        $contact->contact = $request->input('contact');
+
+        $contact->save();
+
+        return redirect('contact/index');
     }
 
     /**
