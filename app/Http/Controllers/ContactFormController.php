@@ -23,8 +23,6 @@ class ContactFormController extends Controller
 
         // クエリビルダー
         $contacts = DB::table('contact_forms')->get();
-
-        // dd($contacts);
         return view('contact.index', compact('contacts'));
     }
 
