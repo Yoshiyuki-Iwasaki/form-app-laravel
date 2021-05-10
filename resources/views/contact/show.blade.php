@@ -13,8 +13,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    showです。
                     <table class="table">
                         <thead>
                             <tr>
