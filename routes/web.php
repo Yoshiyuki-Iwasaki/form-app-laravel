@@ -12,14 +12,19 @@
 */
 
 
-Route::group(['middleware' => 'auth'], function(){
-    Route::get('/', 'ContactFormController@create')->name('contact.create');
-    Route::get('home', 'ContactFormController@index')->name('contact.index');
-    Route::post('store', 'ContactFormController@store')->name('contact.store');
-    Route::get('show/{id}', 'ContactFormController@show')->name('contact.show');
-    Route::get('edit/{id}', 'ContactFormController@edit')->name('contact.edit');
-    Route::post('update/{id}', 'ContactFormController@update')->name('contact.update');
-    Route::post('destroy/{id}', 'ContactFormController@destroy')->name('contact.destroy');
-});
+// Route::group(['middleware' => 'auth'], function(){
+//     Route::get('/', 'ContactFormController@create')->name('contact.create');
+//     Route::get('home', 'ContactFormController@index')->name('contact.index');
+//     Route::post('store', 'ContactFormController@store')->name('contact.store');
+//     Route::get('show/{id}', 'ContactFormController@show')->name('contact.show');
+//     Route::get('edit/{id}', 'ContactFormController@edit')->name('contact.edit');
+//     Route::post('update/{id}', 'ContactFormController@update')->name('contact.update');
+//     Route::post('destroy/{id}', 'ContactFormController@destroy')->name('contact.destroy');
+// });
+
+Route::get('/{any}', function(){
+    return view('App');
+})->where('any', '.*'); //補足：.*は、正規表現で0文字以上の任意の文字列を意味する
+
 
 Auth::routes();
