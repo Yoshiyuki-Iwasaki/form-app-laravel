@@ -54,7 +54,7 @@ class ContactFormController extends Controller
 
         $contact->save();
 
-        return redirect('contact/index');
+        return redirect('confirm/index');
     }
 
     /**
